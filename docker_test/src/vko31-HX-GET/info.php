@@ -1,4 +1,4 @@
-<?php
+<?php 
 // haetaan tietokannasta data
 // leivotaan dataa
 // generoidaan datasta html koodia
@@ -24,12 +24,14 @@ echo "<ul>";
 
 // tässä luodaan li-elementit, $lines arrayn datasta (silmukalla)
 foreach($lines as $line){
-    // Silmukan sisällä, laitetaan  $line li-elementin sisälle
+    // Silmukan sisällä, laitetaan $line li-elementin sisälle
     // trim, poistaa välilyönnit alusta ja lopusta
-    // htmlspecialchars, estetään XSS, käsittelee sisällön tekstinä
+    // htmlspecialchars, estetään XSS, käsitteleen sisällön tekstinä
     echo "<li>" . htmlspecialchars(trim($line)) . "</li>";
 }
 
-echo "<ul>";
+echo "</ul>";
+
+
 
 ?>

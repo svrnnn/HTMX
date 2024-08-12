@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.9' # kommentit, tässä docker versio
 services:
   php-env:
     build:
@@ -11,7 +11,7 @@ services:
     depends_on:
       - mysql_db
   mysql_db:
-    image: mysql:8.3 # muista muuttaa tähän latest --> 8.3
+    image: mysql:8.3 # latest ei toimi, valitaan 8.3 versio
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
