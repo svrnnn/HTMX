@@ -1,5 +1,6 @@
 <?php
     session_start();
+    // session_destroy();
 
     // Tarkistetaan onko muuttuja olemassa valmiina
     // Jotta ei tyhjennetä käyttäjän ostoslistaa
@@ -37,12 +38,16 @@
         <section>
             <ul id="items">
                 <?php 
-                    foreach($_SESSION['items'] as $item){
+                    foreach($_SESSION['items'] as $index => $item){
                         echo
                         "
-                        <li>
+                        <li id='item-$index'>
                             <span>" . htmlspecialchars($item) . "</span>
-                            <button>REMOVE</button>
+                            <button
+                            hx-delete=\"delete-item.php?index=$index\"
+                            hx-target=\"#item-$index\"
+                            hx-swap=\"outerHTML\"
+                            >REMOVE</button>
                         </li>
                         ";
                     }

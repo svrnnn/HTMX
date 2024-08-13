@@ -8,7 +8,6 @@
 // 2.a Tietokanta, $_SESSION (Disk/SSD), $_SESSION (RAM). SESSION on väliaikainen
 // 3. palautetaan jotakin HTML koodia (valinnainen)
 
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(isset($_POST['note'])){
 
