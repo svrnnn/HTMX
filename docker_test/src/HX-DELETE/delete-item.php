@@ -2,6 +2,8 @@
 
 session_start();
 
+usleep(100000);
+
     // Kuinka otetaan DELETE parametri vastaan?
     if($_SERVER['REQUEST_METHOD'] === 'DELETE'){
         

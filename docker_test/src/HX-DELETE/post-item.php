@@ -2,6 +2,8 @@
 
 session_start();
 
+usleep(100000);
+
 // Otetaan vastaan POST ja tallennetaan sessioon uusi item
 
 // Onko POST
