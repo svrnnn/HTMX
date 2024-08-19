@@ -82,3 +82,10 @@ form button:active {
 #items li button:active {
     background-color:  rgb(196, 67, 119);
 }
+
+button:disabled,
+button:disabled:hover{
+    background-color: grey;
+    opacity: 0.6;
+    cursor: not-allowed;
+}

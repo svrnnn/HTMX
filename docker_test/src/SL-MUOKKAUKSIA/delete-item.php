@@ -10,10 +10,10 @@ session_start();
         if(isset($_GET['id'])){
             // Poistetaan taulukosta tietty id
             $id = $_GET['id'];
-            print_r($_SESSION['items']);
+            // print_r($_SESSION['items']);
             unset($_SESSION['items'][$id]);
-            echo " -POISTO- ";
-            print_r($_SESSION['items']);
+            // echo " -POISTO- ";
+            // print_r($_SESSION['items']);
         }
         else{
             echo "ei ole indeksi";

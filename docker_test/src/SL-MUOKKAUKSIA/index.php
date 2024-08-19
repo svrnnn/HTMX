@@ -1,4 +1,7 @@
 <?php
+
+    include "funcs.php";
+
     session_start();
     // session_destroy();
 
@@ -27,29 +30,25 @@
              hx-post="post-item.php"
              hx-target="#items"
              hx-swap="beforeend"
+             hx-on::after-request="this.reset();
+             document.querySelector('input').focus();"
+             hx-disabled-elt="form button"
              >
                 <div>
                     <label for="item">Item</label>
+                    <input required type="text" id="item" name="item" />
                     <input type="text" id="item" name="item" />
                 </div>
                 <button type="submit">Add item</button>
             </form>
         </section>
         <section>
-            <ul id="items">
+            <ul id="items"
+            hx-swap="outerHTML"
+            hx-confirm="Are you sure?">
                 <?php 
                     foreach($_SESSION['items'] as $id => $item){
-                        echo
-                        "
-                        <li id='item-$id'>
-                            <span>" . htmlspecialchars($item) . "</span>
-                            <button
-                            hx-delete=\"delete-item.php?id=$id\"
-                            hx-target=\"#item-$id\"
-                            hx-swap=\"outerHTML\"
-                            >REMOVE</button>
-                        </li>
-                        ";
+                        echo generateListItem($id, $item);
                     }
                 ?>
             </ul>

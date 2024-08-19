@@ -1,8 +1,10 @@
 <?php 
 
+include "funcs.php";
+
 session_start();
 
-// usleep(100000);
+usleep(4000000); // simuloidaan viive
 
 // Otetaan vastaan POST ja tallennetaan sessioon uusi item
 
@@ -16,16 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // tallennetaan data sessioon
         $_SESSION['items'][$id] = $_POST['item'];
         // Palautuksena riittää pelkkä uusin li-elementti
-        echo "
-        <li id='item-$id'>
-            <span>" . htmlspecialchars($_POST['item']) . "</span>
-            <button
-            hx-delete=\"delete-item.php?id=$id\"
-            hx-target=\"#item-$id\"
-            hx-swap=\"outerHTML\"
-            >REMOVE</button>
-        </li>
-        ";
+        echo generateListItem($id, $_POST['item']);
 
     }else{
         echo "No 'item' in POST";
