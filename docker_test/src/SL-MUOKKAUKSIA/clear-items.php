@@ -3,7 +3,6 @@
 // Tällä tiedostolla voisi tyhjentää koko listan
 session_destroy();
 
-// päivitetään HTML käyttäjälle
+// päivitetään HTML käyttäjlle
 exit();
-
 ?>

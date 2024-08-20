@@ -8,8 +8,9 @@
     // Tarkistetaan onko muuttuja olemassa valmiina
     // Jotta ei tyhjennetä käyttäjän ostoslistaa
     if(isset($_SESSION['items']) === false){
-     // Luodaan session muuttuja, jossa oletuksena tyhjä taulukko
-    $_SESSION['items'] = [];       
+
+        // Luodaan session muuttuja, jossa oletuksena tyhjä taulukko
+        $_SESSION['items'] = [];
     }
 
 ?>
@@ -26,18 +27,17 @@
     <main>
         <h1>Shopping List</h1>
         <section>
-            <form id="item-form"
-             hx-post="post-item.php"
-             hx-target="#items"
-             hx-swap="beforeend"
-             hx-on::after-request="this.reset();
-             document.querySelector('input').focus();"
-             hx-disabled-elt="form button"
-             >
+            <form id="item-form" 
+            hx-post="post-item.php"
+            hx-target="#items"
+            hx-swap="beforeend"
+            hx-on::after-request="this.reset();
+            document.querySelector('input').focus();"
+            hx-disabled-elt="form button"
+            >
                 <div>
                     <label for="item">Item</label>
                     <input required type="text" id="item" name="item" />
-                    <input type="text" id="item" name="item" />
                 </div>
                 <button type="submit">Add item</button>
             </form>
