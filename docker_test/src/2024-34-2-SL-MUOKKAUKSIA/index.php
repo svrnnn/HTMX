@@ -1,5 +1,34 @@
 <?php
 
+    // 1. Lisätään sivulla nappi (form), sivun oikeaan reunaan, 
+    // samalle tasolle kuin form
+    // 2. nappi tyhjentää kaikki lisätyt tuotteet
+    // 3. Päivitetään HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     include "funcs.php";
 
     session_start();
@@ -26,7 +55,7 @@
 <body>
     <main>
         <h1>Shopping List</h1>
-        <section>
+        <section id="forms">
             <form id="item-form" 
             hx-post="post-item.php"
             hx-target="#items"
@@ -40,6 +69,14 @@
                     <input required type="text" id="item" name="item" />
                 </div>
                 <button type="submit">Add item</button>
+            </form>
+            <form hx-delete="clear-items.php"
+            hx-target="#items"
+            hx-swap="innerHTML"
+            hx-confirm="Are you sure?"
+            hx-disabled-elt="#clear-all"
+            >
+                <button type="submit" id="clear-all">Clear All</button>
             </form>
         </section>
         <section>

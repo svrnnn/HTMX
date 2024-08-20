@@ -12,15 +12,15 @@ if($_SERVER['REQUEST_METHOD'] === 'DELETE'){
     // echo "test". $queryParams['index'];
 
     // Vaihtoehto B
-    if(isset($_GET['id'])){
+    if(isset($_GET['items'])){
         // Poistetaan taulukosta tietty id
-        $id = $_GET['id'];
+        $id = $_GET['items'];
         // print_r($_SESSION['items']);
-        unset($_SESSION['items'][$id]); // poisto id:n perusteella  
+        unset($_SESSION['items'][$items]); // poisto id:n perusteella  
         // echo " - POISTO - ";      
         // print_r($_SESSION['items']);
     }else{
-        echo "ei ole id";
+        echo "ei ole items";
     }
 }else{
     echo "ei ole DELETE metodi";

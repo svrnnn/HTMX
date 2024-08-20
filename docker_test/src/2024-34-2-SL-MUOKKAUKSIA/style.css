@@ -78,6 +78,16 @@ form button:active {
     background-color: rgb(219, 118, 159);
 }
 
+#forms {
+    display: flex;
+    justify-content: space-between;
+}
+
+#clear-all{
+    margin-right: 1rem;
+    background-color: rgb(255, 72, 72);
+} 
+
 #items li button:hover,
 #items li button:active {
     background-color:  rgb(196, 67, 119);
