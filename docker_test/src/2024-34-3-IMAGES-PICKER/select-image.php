@@ -2,6 +2,8 @@
 
 session_start();
 
+usleep(200000);
+
 include "data/images.php"; // $DATABASE_IMAGES muuttuja
 include "components/image.php"; //
 

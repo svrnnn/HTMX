@@ -17,9 +17,10 @@ if(!isset($_SESSION['selected-images'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Picker</title>
     <link rel="stylesheet" href="style.css">
-    <script src="htmx.js"></script>
+    <script src="htmx.js" defer></script>
+    <script src="main.js" defer></script>
+    <title>Image Picker</title>
 </head>
 <body>
     <header>
@@ -28,7 +29,8 @@ if(!isset($_SESSION['selected-images'])){
         <p>Pick a collection of photos from the selection</p>
     </header>
     <main>
-        <section>
+
+        <section id="selected-images-section">
             <h2>Selected Images</h2>
             <ul id="selected-images">
                 <?php

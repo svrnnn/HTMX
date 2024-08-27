@@ -23,7 +23,10 @@
             $attributes = "hx-post=\"select-image.php\"
                     hx-vals='{\"imageId\": \"$id\"}'
                     hx-target=\"#selected-images\"
-                    hx-swap=\"beforeend\"";
+                    hx-swap=\"beforeend show:#selected-images-section:top\"
+                    data-action=\"add\"
+                    ";
+
         }
         else{
             // Poikkeuksena voi olla FALSE, eli DELETE
@@ -31,6 +34,7 @@
                 hx-delete=\"select-image.php?id=$id\"
                 hx-target=\"closest li\"
                 hx-swap=\"outerHTML\"
+                data-action=\"remove\"
             ";
         }
         
