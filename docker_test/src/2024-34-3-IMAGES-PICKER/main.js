@@ -1,4 +1,14 @@
+// Tässä esimerkki HTMX oletusarvojen konfiguroinnista
+// htmx.config.defaultSwapStyle = "outerHTML";
+console.log(htmx);
+
 function showConfirmationModal(event){
+
+    // Jos path on suggested-images, lopetetaan suoritus (ei tehdä mitään)
+    if(event.detail.path === 'suggested-images.php'){
+        return; // Lopettaa koko funktion suorituksen
+    }
+
     console.log("Confirmation");
 
     // Estä eventin toiminta

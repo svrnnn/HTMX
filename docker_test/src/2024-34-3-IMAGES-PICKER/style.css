@@ -201,3 +201,25 @@ li:hover {
 }
 
 /* Modal päättyy tähän */
+
+/* muokataan sivulle 3 tyyliä
+    1. suggested osio, reunus pois
+    2. suggested osio, keskitetään kuvat
+    3. suggested osio, palkki, joka täyttyy 5 sekuntia
+        ilmaisee milloin kuvat vaihtuvat
+*/
+
+@keyframes timer {
+    from{
+        width: 0%
+    } to {
+        width: 100%;
+    }
+}
+
+#loading {
+    background-color: darkblue;
+    width: 0%;
+    height: 0.4rem;
+    animation: timer 5s linear forwards;
+}
