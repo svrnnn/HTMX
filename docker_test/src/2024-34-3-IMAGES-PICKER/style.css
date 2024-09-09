@@ -1,55 +1,65 @@
 * {
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
-html{
+
+html {
     font-family: sans-serif;
     line-height: 1.5;
-    color: aliceblue; 
+    color: white;
     height: 100%;
     min-height: 100rem;
 }
+
 body{
     margin: 0;
-    /* rem = root element. rem auttaa sivun dynaamisuuden kanssa
-    jos root, eli html elementin koko muuttuu, kaikki päivittyy sen mukana
+    /*
+    rem = root element. rem auttaa sivun dynaamisuuden kanssa,
+    jos root, eli html elementin koko muuttuu, kaikki päivittyy sen mukana 
     rem = 16px
     */
     padding: 2rem;
-    background: linear-gradient(180deg, #77a2ad, #83a8b1 100%);    
-  
+    background: linear-gradient(180deg, #77a2ad, #83a8b1 100%);
 }
-header{
+
+header {
     text-align: center;
 }
+
 header h1 {
     margin: 0;
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 1rem;
 }
+
 header img {
     width: 9rem;
     height: 9rem;
     object-fit: contain;
 }
+
 header p {
     margin: 0 auto;
     font-size: 1.15rem;
     max-width: 38ch;
 }
-section{
+
+section {
     margin: 2rem auto;
     padding: 1rem;
-    border: solid 1px black; 
+    border: 2px solid #0d373e;
     border-radius: 8px;
 }
-section h2{
+
+section h2 {
+    /* font-family: sans-serif; perii html */
     font-size: 1.15rem;
     margin: 0;
     padding: 0;
     margin-bottom: 1rem;
     text-align: center;
 }
+
 ul {
     max-width: 80rem;
     display: grid;
@@ -59,60 +69,72 @@ ul {
     padding: 0;
     list-style: none;
 }
+
 li {
+    position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    background: black;
-    height: 10rem;
+    background: #1f1c2c;
+    height: 10rem;    
     overflow: hidden;
-    position: relative;
 }
+
 li button {
     background: transparent;
     border: none;
     padding: 0;
 }
-li img{
+
+li img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 0.5rem;
 
-    -webkit-user-drag: none; /* chrome ja edge */
-    -moz-user-select: none; /* firefox */
+    -webkit-user-drag: none; /* chrome, edge*/
+    -moz-user-select: none;
     user-select: none;
-    pointer-events: auto; 
+    pointer-events: auto;
+
 }
+
 li h3 {
     font-weight: normal;
     font-size: 0.9rem;
     position: absolute;
     bottom: 0;
     right: 1rem;
-    background-color: lightyellow;
+    margin: 1rem auto;
+    background-color: #feee86;
     border-radius: 4px;
     padding: 0.15rem 0.35rem;
     box-shadow: 0 1px 4px black;
 }
+
 button img {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
+
 /* pseudo */
 li:nth-child(odd) button img:hover{
     transform: rotate(5deg);
-    
 }
+
 li:nth-child(even) button img:hover{
     transform: rotate(-5deg);
 }
-li:hover {
-    box-shadow: 0 0 8px 5px rgba(88, 16, 122, 0.5);
+
+li:hover{
+    box-shadow: 0 0 8px 5px rgba(255, 251, 0, 0.6);
 }
+
 /* Modal alkaa tästä */
+
 #confirmation {
     padding: 1rem;
-}
+  }
+
 #confirmation h2 {
     font-family: sans-serif;
     font-size: 1.5rem;
@@ -120,18 +142,21 @@ li:hover {
     padding: 0;
     color: #5d0909;
 }
+
 #confirmation p {
     margin: 0;
     font-size: 1.15rem;
     max-width: 38rem;
     color: #804242;
 }
+
 #confirmation-actions {
     margin-top: 1rem;
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
 }
+
 .modal button {
     cursor: pointer;
     font-family: sans-serif;
@@ -143,28 +168,33 @@ li:hover {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     color: #fff;
 }
+
 .modal button:hover,
 .modal button:focus {
   background-color: #3e0505;
 }
+
 .modal button#action-no {
-    background-color: #3e0505;
-    color: white;
+    background-color: transparent;
+    color: #5d0909;
     border: none;
     box-shadow: none;
 }
+
 .modal button#action-no:hover,
 .modal button#action-no:focus {
-  color: white;
+  color: #3e0505;
 }
+
 .button-text {
     background: transparent;
     border: none;
     padding: 0;
     font-family: sans-serif;
     font-size: 1rem;
-    color: white;
+    color: #5d0909;    
 }
+
 .modal {
     min-width: 30rem;
     padding: 0;
@@ -172,8 +202,9 @@ li:hover {
     background: #d5c7bc;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    animation: slide-down-fade-in 0.3s ease-out forwards;
+    animation: slide-down-fade-in 0.4s ease-out forwards;
 }
+
 @keyframes slide-down-fade-in {
     from {
       opacity: 0;
@@ -184,6 +215,7 @@ li:hover {
       transform: translateY(0);
     }
 }
+
 .modal::backdrop {
     position: fixed;
     top: 0;
@@ -193,33 +225,38 @@ li:hover {
     height: 100vh;
     background: rgba(0, 0, 0, 0.8);
 }
-.modal .add {
-    background-color: green;
-}
-.modal .remove {
-    background-color: grey;
-}
 
-/* Modal päättyy tähän */
+.modal .add {
+    background-color: #37a500;
+  }
+
+/* Modal loppuu tähän */
 
 /* muokataan sivulle 3 tyyliä
-    1. suggested osio, reunus pois
-    2. suggested osio, keskitetään kuvat
-    3. suggested osio, palkki, joka täyttyy 5 sekuntia
+  1. suggested osio, reunus pois
+  2. suggested osio, keskitetään kuvat
+  3. suggested osio, palkki, joka täyttyy 5 sekunttia
         ilmaisee milloin kuvat vaihtuvat
 */
 
 @keyframes timer {
     from{
-        width: 0%
-    } to {
+        width: 0%;
+    }
+    to{
         width: 100%;
     }
 }
 
 #loading {
-    background-color: darkblue;
+    background-color: #1f1c2c;
     width: 0%;
     height: 0.4rem;
     animation: timer 5s linear forwards;
+}
+
+#suggested-images-section{
+    border: none;
+    margin: 2rem auto;
+    max-width: 40rem;
 }

@@ -1,7 +1,7 @@
-htmx.defineWxtension('debug', {
+htmx.defineExtension('debug', {
     onEvent: function (name, evt) {
         if (console.debug) {
-            console.debut(name, evt);
+            console.debug(name, evt);
         } else if (console) {
             console.log("DEBUG:", name, evt);
         } else {

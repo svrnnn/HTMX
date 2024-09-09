@@ -23,10 +23,9 @@
             $attributes = "hx-post=\"select-image.php\"
                     hx-vals='{\"imageId\": \"$id\"}'
                     hx-target=\"#selected-images\"
-                    hx-swap=\"beforeend show:#selected-images-section:top\"
+                    hx-swap=\"beforeend \"
                     data-action=\"add\"
                     ";
-
         }
         else{
             // Poikkeuksena voi olla FALSE, eli DELETE

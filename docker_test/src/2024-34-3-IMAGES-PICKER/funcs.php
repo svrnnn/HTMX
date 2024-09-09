@@ -1,8 +1,8 @@
 <?php
 
+
 // Funktio palauttaa taulukossa kaksi vapaana olevaa kuvaa
-function getSuggestedImages(){
-    include "data/images.php";
+function getSuggestedImages($DATABASE_IMAGES){
     $selected = $_SESSION['selected-images'];
     $availableImages = array_filter(
         $DATABASE_IMAGES, 

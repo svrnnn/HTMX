@@ -29,12 +29,12 @@ if(!isset($_SESSION['selected-images'])){
     <link rel="stylesheet" href="style.css">
     <!-- Tässä HTMX konfigurointi myös -->
     <!-- <meta name="htmx-config" content='{"defaultSwapStyle": "outerHTML"}'> -->
-    <script src="htmx.js" defer></script>
-    <script src="debug-htmx.js" defer></script>
+    <script src="htmx.js" defer></script>    
+    <script src="debug-htmx.js" defer></script>   
     <script src="main.js" defer></script>
     <title>Image Picker</title>
 </head>
-<!-- Tässä testataan htmx lisäosaa -->
+<!-- Tässä testataaan htmx debug lisäosaa -->
 <!-- <body hx-ext="debug"> -->
 <body>
     <header id="testi">
@@ -43,7 +43,7 @@ if(!isset($_SESSION['selected-images'])){
         <p>Pick a collection of photos from the selection.</p>
     </header>
     <main>
-        <section id="suggested-images-section">
+        <section id="suggested-images-section">            
             <h2>Currently suggested</h2>
             <ul id="suggested-images"
                 hx-get="suggested-images.php"
@@ -57,7 +57,7 @@ if(!isset($_SESSION['selected-images'])){
                     }
                 ?>
             </ul>
-            <div id="loading"></div>
+            <div id="loading"></div>        
         </section>
 
         <section id="selected-images-section">
