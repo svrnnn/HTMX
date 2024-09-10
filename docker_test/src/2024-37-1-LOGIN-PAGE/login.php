@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
 require "db_conn.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -52,13 +53,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         if($user && password_verify($password, $user["password"])){
             // Tunnukset ovat oikein
             $_SESSION['email'] = $user["email"];
-            header("HX-Redirec: authentivaated.php");
+            header("HX-Redirect: authenticated.php");
         }else{
             // kirjautumistiedot väärin
             http_response_code(401);
             echo "<p class=\"error\">Invalid email or username.</p>";
         }
-        
+
 
         // echo ""; // ei virheitä
     }
