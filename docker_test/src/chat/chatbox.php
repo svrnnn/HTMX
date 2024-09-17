@@ -9,6 +9,7 @@ include "db_connection.php";
 // Nämä viittaa tietokannan Id sarakkeeseen
 $_SESSION["user_id"] = 1;
 $_SESSION["chat_id"] = 1;
+$_SESSION["latest_id"] = 0;
 
 // Jostakin syystä tarvitaan id erillisessä muuttujassa
 // $_SESSION ei toiminut
@@ -61,6 +62,7 @@ $mysqli->close();
         <!-- Generoidaan tietokannasta viestit HTML muotoon -->
         <?php foreach($messages as $message): ?>
             <?php
+                $_SESSION["latest_id"] = $message["message_id"];
                 // Käyttäjän omat viestit
                 if($message['user_id'] == $user_id){
                     generateSentMessage($message['content'], $message['sent_at'],
