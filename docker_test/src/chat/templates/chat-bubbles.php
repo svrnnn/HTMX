@@ -1,6 +1,10 @@
 <?php
 
-function generateSentMessage($username, $content, $parentMessageId, $sentAt){
+function generateSentMessage(
+        $content,
+        $sentAt,
+        $username = null,
+        $parentMessageId = null){
     ?>
     <!-- HTML koodit -->
      <div class="message sent-container">
@@ -11,7 +15,7 @@ function generateSentMessage($username, $content, $parentMessageId, $sentAt){
              <div class="message-footer">
                 <p class="reply">Reply</p>
                 <p class="time">
-                    <?= htmlspecialchars($sentAt) ?>
+                    <?= htmlspecialchars(date('H:i', strtotime($sentAt))) ?>
                 </p>
              </div>
          </div>
@@ -25,7 +29,7 @@ function generateReceivedMessage($username, $content, $parentMessageId, $sentAt)
      <div class="message">
         <div class="icon">
             <h2>
-                <?= htmlspecialchars($username) ?>
+                <?= htmlspecialchars(strtoupper($username[0])) ?>
             </h2>
         </div>
          <div class="message-content message-received">
@@ -35,7 +39,7 @@ function generateReceivedMessage($username, $content, $parentMessageId, $sentAt)
              <div class="message-footer">
                 <p class="reply">Reply</p>
                 <p class="time">
-                    <?= htmlspecialchars($sentAt) ?>
+                    <?= htmlspecialchars(date('H:i', strtotime($sentAt))) ?>
                 </p>
              </div>
          </div>

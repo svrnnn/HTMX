@@ -63,8 +63,8 @@ $mysqli->close();
             <?php
                 // Käyttäjän omat viestit
                 if($message['user_id'] == $user_id){
-                    generateSentMessage($message['username'], $message['content'],
-                     $message['parent_message_id'], $message['sent_at']);
+                    generateSentMessage($message['content'], $message['sent_at'],
+                     $message['username'], $message['parent_message_id']);
                 }else{
                     // Muiden viestit
                     generateReceivedMessage($message['username'], $message['content'],
@@ -72,11 +72,23 @@ $mysqli->close();
                 }
             ?>
         <?php endforeach; ?>
+        <div hx-ext="sse"
+            sse-connect="stream.php"
+            sse-swap="message"
+            hx-swap="beforeend"
+        >
+            <!-- Tänne tulevat kaikkien muiden viestit -->
+        </div>
+            <!-- Käyttäjän omat viestit -->
         <div class="reply-message-goes-here"></div>
     </main>
     <footer>
         <div>
-            <form>
+            <form 
+                hx-post="send-message.php"
+                hx-swap="beforebegin"
+                hx-target=".reply-message-goes-here"
+            >
                 <textarea name="chat-input" required></textarea>
                 <button>
                     <div id="svg-wrapper">

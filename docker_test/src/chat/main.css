@@ -27,7 +27,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     padding: 1rem 1.5rem;
-    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease,
+    background-color 0.5s ease;
     /* visibility: hidden; /* TODO: REMOVE */
 }
 
@@ -35,6 +36,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateX(0.5rem);
+    background-color: red;
 }
 
 .chat-header{
