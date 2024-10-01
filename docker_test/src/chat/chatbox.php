@@ -73,9 +73,11 @@ $mysqli->close();
                      $message['parent_message_id'], $message['sent_at']);
                 }
             ?>
-        <?php endforeach; ?>
+        <!-- sse-connect="stream.php" -->
+         <?php endforeach; ?>
         <div hx-ext="sse"
-            sse-connect="stream.php"
+            
+            sse-connect="http://localhost:3001/stream"
             sse-swap="message"
             hx-swap="beforeend"
         >
